@@ -1,4 +1,4 @@
-export class Uers {
+export class User {
   constructor(
     public id: number,
     public nme: string,
