@@ -11,6 +11,6 @@ export class LoginComponent {
   public page_title: string;
 
   constructor() {
-    this.page_title = 'Identifícate';
+    this.page_title = 'Identificate';
   }
 }
