@@ -6,10 +6,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { ErrorComponent } from './components/error/error.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/inicio' },
+  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
   { path: 'inicio', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'error', component: ErrorComponent },
-  { path: '**', redirectTo: '/error' },
+  { path: '**', redirectTo: '/error', pathMatch: 'full' },
 ];
