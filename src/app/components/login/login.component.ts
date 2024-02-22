@@ -11,6 +11,6 @@ export class LoginComponent {
   public page_title: string;
 
   constructor() {
-    this.page_title = 'Iniciar Sesión';
+    this.page_title = 'Identifícate';
   }
 }
