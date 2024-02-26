@@ -1,4 +1,26 @@
 <div class="container-fluid mt-3">
   <h1>{{ page_title }}</h1>
   <hr />
+
+  <form
+    class="col-md-5 ml-0 pl-0"
+    #registerForm="ngForm"
+    (ngSugmit)="onSubmit(registerForm)"
+  >
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input
+        type="text"
+        name="name"
+        #name="ngModel"
+        [(ngModel)]="user.name"
+        class="form-control"
+        required
+        pattern="[a-zA-Z]"
+      />
+      <small *ngIf="!name.valid && name.touched">
+        El nombre no es válido
+      </small>
+    </div>
+  </form>
 </div>
