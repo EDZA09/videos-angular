@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from '../../Models/user';
 
 @Component({
   selector: 'app-register',
