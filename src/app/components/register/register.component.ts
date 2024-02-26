@@ -10,8 +10,10 @@ import { User } from '../../Models/user';
 })
 export class RegisterComponent {
   public page_title: string;
+  public user: User;
 
   constructor() {
     this.page_title = 'Registro';
+    this.user = new User(1, '', '', '', '', 'ROLE_USER', '');
   }
 }
