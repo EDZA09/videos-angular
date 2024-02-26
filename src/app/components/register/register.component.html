@@ -14,13 +14,13 @@
         name="name"
         #name="ngModel"
         [(ngModel)]="user.name"
-        class="form-control"
+        class="form-control mb-1"
         required
         pattern="[a-zA-Z]"
       />
-      <small *ngIf="!name.valid && name.touched">
-        El nombre no es válido
-      </small>
+      @if(!name.valid && name.touched){
+      <small class="invalid-feedback d-block"> El nombre no es válido </small>
+      }
     </div>
   </form>
 </div>
