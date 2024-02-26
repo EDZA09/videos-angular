@@ -21,7 +21,7 @@ export class RegisterComponent {
     this.user = new User(1, '', '', '', '', 'ROLE_USER', '');
   }
 
-  onSubmit(formValue: any) {
-    console.log(formValue);
+  onSubmit(form: any) {
+    console.log(this.user);
   }
 }
