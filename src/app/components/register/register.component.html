@@ -63,5 +63,24 @@
         El Correo ingresado no es Válido
       </small>
     </div>
+
+    <div class="form-group">
+      <label for="email">Contraseña</label>
+      <input
+        type="password"
+        name="password"
+        #password="ngModel"
+        [(ngModel)]="user.password"
+        class="form-control mb-1"
+        required
+        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,16}$"
+      />
+      <small
+        *ngIf="!password.valid && password.touched"
+        class="invalid-feedback d-block"
+      >
+        La Contraseña ingresada no es Válida
+      </small>
+    </div>
   </form>
 </div>
