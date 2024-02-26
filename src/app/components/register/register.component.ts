@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { User } from '../../Models/user';
@@ -7,7 +8,7 @@ import { User } from '../../Models/user';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
