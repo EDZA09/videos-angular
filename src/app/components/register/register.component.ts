@@ -17,7 +17,7 @@ export class RegisterComponent {
   public page_title: string;
   public user: User;
 
-  constructor() {
+  constructor(private _userService: UserService) {
     this.page_title = 'Registro';
     this.user = new User(1, '', '', '', '', 'ROLE_USER', '');
   }
