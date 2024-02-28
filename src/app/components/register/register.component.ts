@@ -26,13 +26,17 @@ export class RegisterComponent {
   }
 
   onSubmit(form: any) {
-    this._userService.register(this.user).subscribe((response) => {
-      if (response.status == 'success') {
-        this.status = 'success';
-        form.reset();
-      } else {
-        this.status = 'error';
-      }
+    this._userService.register(this.user).subscribe({
+      next: (response: any) => {
+        if (response.status == 'success') {
+          this.status = 'success';
+        } else {
+          this.status = 'error';
+        }
+      },
+      error: (error: any) => {
+        console.log(error);
+      },
     });
   }
 }
