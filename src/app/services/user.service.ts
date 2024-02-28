@@ -15,5 +15,8 @@ export class UserService {
     return 'Hola mundo desde el UserService';
   }
 
-  register(user: any): Observable<any> {}
+  register(user: any): Observable<any> {
+    let json = JSON.stringify(user);
+    let params = 'json=' + json;
+  }
 }
