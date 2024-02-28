@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 import { User } from '../../Models/user';
 import { UserService } from '../../services/user.service';
@@ -9,7 +10,7 @@ import { UserService } from '../../services/user.service';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterLink],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
   providers: [UserService],
