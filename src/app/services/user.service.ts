@@ -14,4 +14,6 @@ export class UserService {
   prueba() {
     return 'Hola mundo desde el UserService';
   }
+
+  register(user: any): Observable<any> {}
 }
