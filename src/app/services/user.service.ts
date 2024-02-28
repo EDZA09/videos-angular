@@ -23,5 +23,7 @@ export class UserService {
       'Content-Type',
       'application/x-www-form-urlencoded'
     );
+
+    return this._http.post(this.url + 'register', params, { headers: headers });
   }
 }
