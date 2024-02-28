@@ -18,5 +18,10 @@ export class UserService {
   register(user: any): Observable<any> {
     let json = JSON.stringify(user);
     let params = 'json=' + json;
+
+    let headers = new HttpHeaders().set(
+      'Content-Type',
+      'application/x-www-form-urlencoded'
+    );
   }
 }
