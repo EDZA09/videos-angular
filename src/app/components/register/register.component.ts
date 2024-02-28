@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { User } from '../../Models/user';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-register',
