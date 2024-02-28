@@ -30,6 +30,7 @@ export class RegisterComponent {
       next: (response: any) => {
         if (response.status == 'success') {
           this.status = 'success';
+          form.reset();
         } else {
           this.status = 'error';
         }
