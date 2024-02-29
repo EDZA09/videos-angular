@@ -17,12 +17,15 @@ import { UserService } from '../../services/user.service';
 export class LoginComponent {
   public page_title: string;
   public user: User;
+  public identity: any;
+  public token: string;
   public status: string;
 
   constructor(private _userService: UserService) {
     this.page_title = 'Identificate';
     this.user = new User(1, '', '', '', '', 'ROLE_USER', '');
     this.status = '';
+    this.token = '';
   }
 
   onSubmit(form: any) {
@@ -30,7 +33,8 @@ export class LoginComponent {
       next: (response: any) => {
         if (!response.status || response.status != 'error') {
           this.status = 'success';
-          this.user = response;
+          this.identity = response;
+
           console.log(this.user);
         } else {
           this.status = 'error';
