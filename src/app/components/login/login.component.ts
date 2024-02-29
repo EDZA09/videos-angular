@@ -35,6 +35,20 @@ export class LoginComponent {
           this.status = 'success';
           this.identity = response;
 
+          this._userService.signup(this.user, 'true').subscribe({
+            next: (response: any) => {
+              if (!response.status || response.status != 'error') {
+                this.token = response;
+
+                console.log(this.identity);
+                console.log(this.token);
+              }
+            },
+            error(err: any) {
+              console.log(err);
+            },
+          });
+
           console.log(this.user);
         } else {
           this.status = 'error';
