@@ -24,4 +24,6 @@ export class LoginComponent {
     this.user = new User(1, '', '', '', '', 'ROLE_USER', '');
     this.status = '';
   }
+
+  onSubmit(form: any) {}
 }
