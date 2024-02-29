@@ -27,10 +27,18 @@ export class LoginComponent {
 
   onSubmit(form: any) {
     this._userService.signup(this.user).subscribe({
-      next: (response: any){
-
-      }, error: (error: any){
+      next: (response: any) => {
+        if (!response.status || response.status != 'error') {
+          this.status = 'success';
+          this.user = response;
+          console.log(this.user);
+        } else {
+          this.status = 'error';
+        }
+      },
+      error: (error: any) => {
         console.log(error);
-    }})
+      },
+    });
   }
 }
