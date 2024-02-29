@@ -16,8 +16,12 @@ import { UserService } from '../../services/user.service';
 })
 export class LoginComponent {
   public page_title: string;
+  public user: User;
+  public status: string;
 
   constructor() {
     this.page_title = 'Identificate';
+    this.user = new User(1, '', '', '', '', 'ROLE_USER', '');
+    this.status = '';
   }
 }
