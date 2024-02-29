@@ -30,5 +30,10 @@ export class UserService {
   signup(user: any, gettoken = null): Observable<any> {
     let json = JSON.stringify(user);
     let params = 'json=' + json;
+
+    let headers = new HttpHeaders().set(
+      'Content-Type',
+      'application/x-www-form-urlencoded'
+    );
   }
 }
