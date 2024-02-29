@@ -19,7 +19,7 @@ export class LoginComponent {
   public user: User;
   public status: string;
 
-  constructor() {
+  constructor(private _userService: UserService) {
     this.page_title = 'Identificate';
     this.user = new User(1, '', '', '', '', 'ROLE_USER', '');
     this.status = '';
