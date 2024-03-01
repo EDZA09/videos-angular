@@ -45,5 +45,7 @@ export class UserService {
     return this._http.post(this.url + 'login', params, { headers: headers });
   }
 
-  getIdentity() {}
+  getIdentity() {
+    let identity = JSON.parse(localStorage.getItem('identity') || '');
+  }
 }
