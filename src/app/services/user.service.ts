@@ -44,4 +44,6 @@ export class UserService {
 
     return this._http.post(this.url + 'login', params, { headers: headers });
   }
+
+  getIdentity() {}
 }
