@@ -45,8 +45,8 @@ export class LoginComponent {
               if (!response.status || response.status != 'error') {
                 this.token = response;
 
-                console.log(this.identity);
-                console.log(this.token);
+                //console.log(this.identity);
+                //console.log(this.token);
 
                 localStorage.setItem('token', this.token);
                 localStorage.setItem('identity', JSON.stringify(this.identity));

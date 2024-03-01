@@ -7,8 +7,12 @@ import { global } from './global';
 @Injectable()
 export class UserService {
   public url: string;
+  public identity: any;
+  public token: string;
+
   constructor(public _http: HttpClient) {
     this.url = global.url;
+    this.token = '';
   }
 
   prueba() {
