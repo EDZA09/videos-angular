@@ -42,6 +42,9 @@ export class LoginComponent {
 
                 console.log(this.identity);
                 console.log(this.token);
+
+                localStorage.setItem('token', this.token);
+                localStorage.setItem('identity', JSON.stringify(this.identity));
               }
             },
             error(err: any) {
