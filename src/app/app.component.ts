@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { RouterLink } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 import { UserService } from './services/user.service';
 
@@ -13,7 +12,8 @@ import { UserService } from './services/user.service';
   styleUrl: './app.component.css',
   providers: [UserService],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  title = 'Aplicación de videos favoritos';
   public identity: any;
   public token: string;
 
