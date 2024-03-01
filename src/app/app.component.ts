@@ -14,7 +14,10 @@ import { UserService } from './services/user.service';
   providers: [UserService],
 })
 export class AppComponent {
-  title = 'Aplicación de videos favoritos';
+  public identity: any;
+  public token: string;
 
-  constructor(private _userService: UserService) {}
+  constructor(private _userService: UserService) {
+    this.token = '';
+  }
 }
