@@ -22,7 +22,11 @@ export class LoginComponent {
   public token: string;
   public status: string;
 
-  constructor(private _userService: UserService) {
+  constructor(
+    private _userService: UserService,
+    private _router: Router,
+    private _route: ActivatedRoute
+  ) {
     this.page_title = 'Identificate';
     this.user = new User(1, '', '', '', '', 'ROLE_USER', '');
     this.status = '';
