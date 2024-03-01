@@ -20,4 +20,9 @@ export class AppComponent {
   constructor(private _userService: UserService) {
     this.token = '';
   }
+
+  loadUser() {
+    this.identity = this._userService.getIdentity();
+    this.token = this._userService.getToken();
+  }
 }
