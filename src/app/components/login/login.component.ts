@@ -33,6 +33,10 @@ export class LoginComponent implements OnInit {
     this.token = '';
   }
 
+  ngOnInit(): void {
+    this.logout();
+  }
+
   onSubmit(form: any) {
     this._userService.signup(this.user).subscribe({
       next: (response: any) => {
