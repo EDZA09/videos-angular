@@ -68,5 +68,19 @@ export class LoginComponent {
     });
   }
 
-  logout() {}
+  logout() {
+    this._route.params.subscribe({
+      next: (params: any) => {
+        let sure = +params['sure'];
+
+        if (sure == 1) {
+          localStorage.removeItem('identity');
+          localStorage.removeItem('token');
+
+          this.identity = null;
+          this.token = '';
+        }
+      },
+    });
+  }
 }
