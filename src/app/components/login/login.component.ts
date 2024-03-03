@@ -79,6 +79,8 @@ export class LoginComponent {
 
           this.identity = null;
           this.token = '';
+
+          this._router.navigate(['/inicio']);
         }
       },
     });
