@@ -9,6 +9,7 @@ export const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
   { path: 'inicio', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'logout/:sure', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'error', component: ErrorComponent },
   { path: '**', redirectTo: '/error', pathMatch: 'full' },
