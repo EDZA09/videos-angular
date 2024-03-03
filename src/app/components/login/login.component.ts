@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -15,7 +15,7 @@ import { UserService } from '../../services/user.service';
   styleUrl: './login.component.css',
   providers: [UserService],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements DoCheck {
   public page_title: string;
   public user: User;
   public identity: any;
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     this.token = '';
   }
 
-  ngOnInit(): void {
+  ngDoCheck(): void {
     this.logout();
   }
 
