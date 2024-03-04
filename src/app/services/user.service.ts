@@ -46,13 +46,9 @@ export class UserService {
   }
 
   getIdentity() {
-    if (this.identity !== null) {
-      let identity = JSON.parse(localStorage.getItem('identity') || '');
-      if (identity && identity != '') {
-        this.identity = identity;
-      } else {
-        this.identity = null;
-      }
+    let identity = localStorage.getItem('identity');
+    if (this.identity !== null && identity !== null) {
+      this.identity = JSON.parse(identity);
     }
 
     return this.identity;
