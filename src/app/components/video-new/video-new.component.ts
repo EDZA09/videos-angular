@@ -5,8 +5,11 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './video-new.component.html',
-  styleUrl: './video-new.component.css'
+  styleUrl: './video-new.component.css',
 })
 export class VideoNewComponent {
-
+  public page_title: string;
+  constructor() {
+    this.page_title = 'Guardar un nuevo video favorito';
+  }
 }
