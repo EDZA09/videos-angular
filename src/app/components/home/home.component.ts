@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private _userService: UserService) {
     this.page_title = 'Inicio';
-    this.identity = this._userService.getIdentity();
     this.token = '';
   }
 
