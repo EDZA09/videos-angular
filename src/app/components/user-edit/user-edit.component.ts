@@ -10,7 +10,7 @@ import { UserService } from '../../services/user.service';
 @Component({
   selector: 'app-user-edit',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './user-edit.component.html',
   styleUrl: './user-edit.component.css',
   providers: [UserService],
@@ -24,5 +24,9 @@ export class UserEditComponent {
     this.page_title = 'Registro';
     this.user = new User(1, '', '', '', '', 'ROLE_USER', '');
     this.status = '';
+  }
+
+  onSubmit(form: any) {
+    console.log(form);
   }
 }

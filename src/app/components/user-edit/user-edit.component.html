@@ -3,21 +3,18 @@
   <hr />
   @if(status == "success"){
   <div class="alert alert-success col-md-5 m-auto p-auto" role="alert">
-    <p>
-      Te Has registrado correctamente,
-      <a routerLink="/login"> Identif&iacute;cate aqu&iacute;</a>
-    </p>
+    <p>Has actualizado tus datos</p>
   </div>
   } @else if(status=="error") {
   <div class="alert alert-danger col-md-5 m-auto p-auto" role="alert">
-    <p>NO Te has registrado correctamente</p>
+    <p>NO se ha actulizdo tus datos</p>
   </div>
   }
 
   <form
     class="col-md-5 m-auto p-auto"
-    #registerForm="ngForm"
-    (ngSubmit)="onSubmit(registerForm)"
+    #userEditForm="ngForm"
+    (ngSubmit)="onSubmit(userEditForm)"
   >
     <div class="form-group">
       <label for="name">Nombre(s)</label>
@@ -76,30 +73,11 @@
       </small>
     </div>
 
-    <div class="form-group">
-      <label for="email">Contraseña</label>
-      <input
-        type="password"
-        name="password"
-        #password="ngModel"
-        [(ngModel)]="user.password"
-        class="form-control mb-1"
-        required
-        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,16}$"
-      />
-      <small
-        *ngIf="!password.valid && password.touched"
-        class="invalid-feedback d-block"
-      >
-        La Contraseña ingresada no es Válida
-      </small>
-    </div>
-
     <input
       type="submit"
-      value="Registrarse"
+      value="Actualizar"
       class="btn btn-primary"
-      [disabled]="registerForm.invalid"
+      [disabled]="userEditForm.invalid"
     />
   </form>
 </div>
