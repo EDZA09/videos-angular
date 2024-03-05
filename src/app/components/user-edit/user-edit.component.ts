@@ -19,9 +19,13 @@ export class UserEditComponent {
   public page_title: string;
   public user: User;
   public status: string;
+  public identity: any;
+  public token: string;
 
   constructor(private _userService: UserService) {
     this.page_title = 'Registro';
+    this.identity = this._userService.getIdentity();
+    this.token = this._userService.getToken();
     this.user = new User(1, '', '', '', '', 'ROLE_USER', '');
     this.status = '';
   }
