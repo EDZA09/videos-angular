@@ -7,6 +7,8 @@ import { ErrorComponent } from './components/error/error.component';
 import { VideoNewComponent } from './components/video-new/video-new.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 
+import { IdentityGuard } from './services/identity.guard';
+
 export const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
   { path: 'inicio', component: HomeComponent },
@@ -14,7 +16,11 @@ export const routes: Routes = [
   { path: 'logout/:sure', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'guardar-favorito', component: VideoNewComponent },
-  { path: 'ajustes', component: UserEditComponent },
+  {
+    path: 'ajustes',
+    component: UserEditComponent,
+    canActivate: [IdentityGuard],
+  },
   { path: 'error', component: ErrorComponent },
   { path: '**', redirectTo: '/error', pathMatch: 'full' },
 ];
