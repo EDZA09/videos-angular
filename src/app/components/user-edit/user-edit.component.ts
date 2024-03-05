@@ -26,7 +26,15 @@ export class UserEditComponent {
     this.page_title = 'Registro';
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
-    this.user = new User(1, '', '', '', '', 'ROLE_USER', '');
+    this.user = new User(
+      this.identity.sub,
+      this.identity.name,
+      this.identity.surname,
+      this.identity.email,
+      '',
+      'ROLE_USER',
+      ''
+    );
     this.status = '';
   }
 
