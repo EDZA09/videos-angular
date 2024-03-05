@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { UserService } from '../../services/user.service';
@@ -11,7 +11,7 @@ import { UserService } from '../../services/user.service';
   styleUrl: './home.component.css',
   providers: [UserService],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   public page_title: string;
   public identity: any;
   public token: string;
@@ -21,4 +21,6 @@ export class HomeComponent {
     this.identity = this._userService.getIdentity();
     this.token = '';
   }
+
+  ngOnInit(): void {}
 }
